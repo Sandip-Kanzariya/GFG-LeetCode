@@ -11,15 +11,12 @@ public:
 	/* if x is present in arr[] then returns the count
 		of occurrences of x, otherwise returns 0. */
 	int count(int arr[], int n, int x) {
-	    int ans = 0;
+	    int first = lower_bound(arr, arr + n, x) - arr; // First index of element which is Less then or Equal to x 
+	    int last = upper_bound(arr, arr + n, x) - arr; // First index of element which is Greater then  x 
 	    
-	    for(int i = 0;i < n;i++){
-	           if(x == arr[i]){
-	               ans++;
-	           }
-	    }
+	    if(arr[first] != x) return 0;
 	    
-	    return ans;
+	    return last - first;
 	}
 };
 
