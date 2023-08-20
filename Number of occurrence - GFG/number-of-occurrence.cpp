@@ -14,7 +14,7 @@ public:
 	    int first = lower_bound(arr, arr + n, x) - arr; // First index of element which is Less then or Equal to x 
 	    int last = upper_bound(arr, arr + n, x) - arr; // First index of element which is Greater then  x 
 	    
-	    if(arr[first] != x) return 0;
+	    if(first == n) return 0;
 	    
 	    return last - first;
 	}
