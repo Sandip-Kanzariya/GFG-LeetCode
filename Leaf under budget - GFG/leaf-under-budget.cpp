@@ -122,7 +122,7 @@ public:
         q.push({root, 1}); 
         
         int ans = 0;
-        vector <int> lv;
+    
         while(!q.empty()){
             
             Node *f = q.front().first;
@@ -132,12 +132,12 @@ public:
             
             if(f -> left == NULL && f -> right == NULL){
                 
-                lv.push_back(level);
-                // if(k - level >= 0){
-                    // ans++;
-                    // k = k - level;
+                
+                if(k - level >= 0){
+                    ans++;
+                    k = k - level;
                     
-                // }
+                }
             }
             
             if(f -> left != NULL){
@@ -150,14 +150,7 @@ public:
             }
         }
         
-        sort(lv.begin(), lv.end());
         
-        for(int i = 0;i < lv.size();i++){
-            if(k - lv[i] >= 0){
-                k = k - lv[i];
-                ans++;
-            }    
-        }
         
         return ans;
     }
