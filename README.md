@@ -13,7 +13,10 @@ Solution Of GFG Questions
 
 
 # Graph 
-
+#### BFS 
+|Question|Problem|
+|---|---|
+| |[Minimum Multiplication to Reach End](https://practice.geeksforgeeks.org/problems/minimum-multiplications-to-reach-end/1)|
 #### DFS on Grid 
 |Question|Problem|
 |---|---|
