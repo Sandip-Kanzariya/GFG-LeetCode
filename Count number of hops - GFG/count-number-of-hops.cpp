@@ -10,6 +10,11 @@ class Solution
     //Function to count the number of ways in which frog can reach the top.
     
     long long mod =  1000000007;
+        
+    /* Dp like fibonacci 
+        Time : O(n)
+        Space : O(n)
+    */
     
     long long countWays(int n)
     {
