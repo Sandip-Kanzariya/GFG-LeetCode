@@ -11,29 +11,33 @@ class Solution
     
     long long mod =  1000000007;
         
-    /* Dp like fibonacci 
+    /* Optimization in fibonacci 
         Time : O(n)
-        Space : O(n)
+        Space : O(1)
     */
     
     long long countWays(int n)
     {
         
-        if(n == 1 || n == 2) return n;
-        else if (n == 3) return 4;
+        long long a = 1;
+        long long b = 2;
+        long long c = 4;
+        long long d;
         
-        int dp[n + 1] = {0};
+        if(n == 1) return a;
+        else if(n == 2) return b;
+        else if (n == 3) return c;
         
-        dp[1] = 1;
-        dp[2] = 2;
-        dp[3] = 4;
         
         
         for(int i = 4;i <= n;i++){
-            dp[i] = (dp[i - 1] % mod + dp[i - 2] % mod + dp[i - 3] % mod) % mod;
+            d = (a % mod + b % mod + c % mod) % mod;
+            a = b;
+            b = c;
+            c = d; 
         }
         
-        return dp[n];
+        return d;
     }
 };
 
