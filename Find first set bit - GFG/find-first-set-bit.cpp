@@ -16,17 +16,18 @@ class Solution
     unsigned int getFirstSetBit(int n)
     {
         
-        string s = bitset <32>(n).to_string();
+       unsigned int ans = 0;
+       
+       while(n){
+           ans++;
+           
+           if(n & 1){
+               return ans;
+           }
+           n = n >> 1;
+       }
         
-        int ans = 0;
-        for(int i = s.size() - 1;i >= 0;i--){
-            ans++;
-            if(s[i] == '1'){
-                return ans;
-            }
-        }
-        
-        return 0;
+        return ans;
     }
 };
 
