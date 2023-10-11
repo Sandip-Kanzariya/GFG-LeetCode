@@ -2,6 +2,10 @@
 Solution Of GFG Questions 
 
 # Tree 
+|Question|Problem|
+|---|---|
+|Height of Binary Tree |[GFG](https://practice.geeksforgeeks.org/problems/height-of-binary-tree/1)|
+|Balanced Binary Tree |[GFG](https://practice.geeksforgeeks.org/problems/check-for-balanced-tree/1), [LeetCode](https://leetcode.com/problems/balanced-binary-tree/description/)|
 
 #### Level Ordered Travesal in BT : BFS 
 |Question|Problem|
