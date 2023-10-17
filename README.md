@@ -25,3 +25,4 @@ Solution Of GFG Questions
 |Question|Problem|
 |---|---|
 | |[GFG](https://practice.geeksforgeeks.org/problems/replace-os-with-xs0052/1)|
+|Floyd Warshall| Transitive closure of a Graph [GFG](https://practice.geeksforgeeks.org/problems/transitive-closure-of-a-graph0930/1) |
