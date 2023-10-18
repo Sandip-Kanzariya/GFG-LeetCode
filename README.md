@@ -26,3 +26,4 @@ Solution Of GFG Questions
 |---|---|
 | |[GFG](https://practice.geeksforgeeks.org/problems/replace-os-with-xs0052/1)|
 |Floyd Warshall| Transitive closure of a Graph [GFG](https://practice.geeksforgeeks.org/problems/transitive-closure-of-a-graph0930/1) |
+|Topological|[GFG](https://practice.geeksforgeeks.org/problems/eventual-safe-states/1)|
