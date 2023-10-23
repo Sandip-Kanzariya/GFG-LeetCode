@@ -1,7 +1,12 @@
 class Solution {
 public:
-   bool double_is_int(double d){
-        return floor(d) == ceil(d);
+
+    // bool double_is_int(double d){
+    //     return floor(d) == ceil(d);
+    // }
+
+    bool double_is_int(double d){
+        return (d - trunc(d) == 0);
     }
 
     bool isPowerOfThree(int n) {
