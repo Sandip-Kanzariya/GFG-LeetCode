@@ -9,7 +9,9 @@ using namespace std;
 
 class Solution{
 public:
-
+    
+    // Recursive Memoization 
+    
     bool safe(int i ,int j, int n, int m){
         
         return i < n && i >= 0 && j >= 0 && j < m ;
@@ -23,9 +25,9 @@ public:
         
         
         int t = max({
-            solve(i - 1, j - 1, dp, a, n, m), 
-            solve(i, j - 1, dp, a, n, m), 
-            solve(i + 1, j - 1, dp, a, n, m) 
+            solve(i - 1, j + 1, dp, a, n, m), 
+            solve(i, j + 1, dp, a, n, m), 
+            solve(i + 1, j + 1, dp, a, n, m) 
         });
         
         
@@ -41,7 +43,7 @@ public:
         
         for(int i = 0;i < n;i++){
             
-            ans = max(ans, solve(i, m - 1, dp, a, n, m));
+            ans = max(ans, solve(i, 0, dp, a, n, m));
             
         }
         
