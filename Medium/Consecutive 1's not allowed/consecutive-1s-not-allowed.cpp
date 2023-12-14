@@ -9,21 +9,25 @@ using namespace std;
 class Solution{
 public:
 	// #define ll long long
+
 	
-	// Fibonacci Series Question : 
+	// Recursive, Memoization, DP : 
 	
 	ll mod = 1e9 + 7;
 	ll countStrings(int n) {
 	    
-	    ll p1 = 1, p2 = 1;
+	    vector <vector <ll>> dp(n + 1, vector <ll> (2, 0));
+	    dp[n][0] = dp[n][1] = 1;
 	    
-	    while(n--){
-	        ll next = (p1 + p2) % mod;
-	        p1 = p2;
-	        p2 = next;
+	    //dp[i][j] : I am currently at ith position and my last character is j 
+	    
+	    for(int i = n - 1;i >= 0;i--){
+	        
+	        dp[i][1] = dp[i + 1][0];
+	        dp[i][0] = (dp[i + 1][1] + dp[i + 1][0]) % mod;
 	    }
 	    
-	    return p2;
+	    return dp[0][0];
 	}
 };
 
