@@ -12,7 +12,7 @@ Solution Of GFG Questions
 |---|---|
 |Level Ordered travesal||
 |Find level of each Leaf node|[GFG](https://practice.geeksforgeeks.org/problems/leaf-under-budget/1)|
-|Left most and right most node in each level of BT| [GFG](https://practice.geeksforgeeks.org/problems/leftmost-and-rightmost-nodes-of-binary-tree/1)|
+|Left most and right most node in each level of BT| [GFG](https://practice.geeksforgeeks.org/problems/leftmost-and-rightmost-nodes-of-binary-tree/1), [LeetCode](https://leetcode.com/problems/even-odd-tree/description/)|
 | | |
 
 
