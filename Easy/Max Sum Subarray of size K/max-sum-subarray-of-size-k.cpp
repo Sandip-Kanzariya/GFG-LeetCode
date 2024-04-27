@@ -5,27 +5,39 @@ using namespace std;
 // } Driver Code Ends
 class Solution{   
 public:
+
+    /* Two Pointers : Sliding Windows
+    
+        Time : O(n)
+        Space : O(1)
+    
+    */
     long maximumSumSubarray(int K, vector<int> &Arr , int N){
-        
-        
-        long long ans = 0, MAX = 0;
+        // code here 
         
         int i = 0, j = 0;
         
+        long sum = 0;
+        
+        long ans = 0;
+        
         while(j < N){
-                
-            ans += Arr[j];
             
-            if(j - i + 1 == K){
-                MAX = max(MAX, ans);
-                // cout << ans << " ";
-                ans -= Arr[i];
-                i++;
+            sum += Arr[j];
+            
+            if(j - i + 1 < K){
+                j++;
             }
-            j++;
+            else{
+                ans = max(ans, sum);        
+                
+                sum -= Arr[i];
+                i++;
+                j++;
+            }
         }
         
-        return MAX;
+        return ans;
     }
 };
 
