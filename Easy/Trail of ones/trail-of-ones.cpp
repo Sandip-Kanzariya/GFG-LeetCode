@@ -13,38 +13,31 @@ class Solution {
     
     const intl mod = 1e9 + 7;
     
-        intl Power(intl a, intl x, intl n)
+    intl Power(intl a, intl x, intl n)
+    {
+        intl res = 1;
+    
+        while (x > 0)
         {
-            intl res = 1;
-        
-            while (x > 0)
+    
+            // Odd
+            if (x % 2 == 1)
             {
-        
-                // Odd
-                if (x % 2 == 1)
-                {
-                    res = (res * a) % n;
-                }
-        
-                x = x / 2;
-        
-                a = (a * a) % n;
+                res = (res * a) % n;
             }
-        
-            return res;
+    
+            x = x / 2;
+    
+            a = (a * a) % n;
         }
-        
-    intl numberOfConsecutiveOnes(intl n) {
-        
-        
-        // Fibonacci 
+    
+        return res;
+    }
+    
+    intl fibonacci(intl n){
         intl a = 1, b = 1;
-        intl cn = n;
         
         if(n == 1){
-            return 1;
-        }
-        else if(n == 2){
             return 1;
         }
         else{
@@ -56,8 +49,15 @@ class Solution {
             }        
         }
         
-        return (Power(2, cn, mod) + mod -  b) % mod;
-    }
+        return b;
+    }    
+    
+    intl numberOfConsecutiveOnes(intl n) {
+        
+        
+        // [2^n - nth Fibonacci number ]
+        return (Power(2, n, mod) + mod - fibonacci(n)) % mod;
+    } 
 };
 
 //{ Driver Code Starts.
