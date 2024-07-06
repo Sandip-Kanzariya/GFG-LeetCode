@@ -38,28 +38,25 @@ class Solution {
     Node* deleteNode(Node* head, int x) {
         
         Node* temp = head;
-        Node* p = NULL;
         
-        if(x == 1){
-            head = head -> next;
-            head -> prev = NULL;
+        x--;
+        while(x--){
+            temp = temp -> next;
+        }
+        
+        if(temp == head){
             
+            head = temp -> next;
+            if(temp -> next)
+                temp -> next -> prev = NULL;
+                
+            delete temp;
+        }
+        else{
+            temp -> prev -> next = temp -> next;
             delete temp;
             
-            return head;
         }
-        
-        while(x > 1){
-            p = temp;
-            temp = temp -> next;   
-            x--;
-        }
-        
-        p -> next = temp -> next;
-        temp = temp -> next;
-        if(temp!=NULL)
-            temp -> prev = p;
-        
         return head;
     }
 };
