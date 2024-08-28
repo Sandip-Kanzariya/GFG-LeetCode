@@ -147,7 +147,7 @@ class Solution {
     
     vector<vector<int>> paths;
     
-    void dfs(Node* root, vector <int> &path){
+    void dfs(Node* root, vector <int> path){
         
         if(root == NULL){
             return;
@@ -157,15 +157,13 @@ class Solution {
         // Leaf Check 
         if(root -> left == NULL and root -> right == NULL){
             paths.push_back(path);
-            path.pop_back();
+            
             return;
         }
         
         dfs(root -> left, path);
         dfs(root -> right, path);
         
-        // intermediate
-        path.pop_back();
     }
     
     vector<vector<int>> Paths(Node* root) {
