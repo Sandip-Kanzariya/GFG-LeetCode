@@ -1,76 +1,67 @@
 //{ Driver Code Starts
-//Initial template for C++
-
-#include <bits/stdc++.h>
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <vector>
 using namespace std;
 
-struct Node
-{
+// Initial template for C++
+
+struct Node {
     int data;
     struct Node* next;
-    
-    Node(int x){
+
+    Node(int x) {
         data = x;
         next = NULL;
     }
 };
-void printList(Node* node) 
-{ 
-    while (node != NULL) { 
-        cout << node->data <<" "; 
-        node = node->next; 
-    }  
-    cout<<"\n";
-} 
+
+void printList(Node* node) {
+    while (node != NULL) {
+        cout << node->data << " ";
+        node = node->next;
+    }
+    cout << "\n";
+}
 
 
 // } Driver Code Ends
-/* Link list Node 
+/* Link list Node
 struct Node {
     int data;
     Node* next;
-    
+
     Node(int x){
         data = x;
         next = NULL;
     }
-    
+
 }; */
-class Solution{
-    public:
-    /* Should return data of middle node. If linked list is empty, then  -1*/
-    
-    // https://www.geeksforgeeks.org/problems/node-at-a-given-index-in-linked-list/1
-    int GetNth(struct Node* head, int index){
-        int ans;
+class Solution {
+  public:
+    /* Should return data of middle node. If linked list is empty, then -1 */
+    int getMiddle(Node* head) {
         
-        while(index--){
-            ans = head -> data;
-            head = head -> next;
-        }
-        return ans;
-    }
-    
-    // Length : l
-    
-    int getCount(Node *head){
         
+        // Length 
+        
+        Node* temp = head;
         int l = 0;
-        
-        while(head != NULL){
+        while(temp != NULL){
             l++;
-            head = head -> next;
+            temp = temp -> next;
         }
         
-        return l;
-    }
-    
-    int getMiddle(Node *head)
-    {
-        int l = getCount(head);
-        int mid = l / 2 + 1;
+        int mid = (l / 2) + 1;
         
-        return GetNth(head, mid);
+        mid--;
+        temp = head;
+        while(mid--){
+            temp = temp -> next;
+        }
+        
+        return temp -> data;
     }
 };
 
@@ -78,26 +69,39 @@ class Solution{
 //{ Driver Code Starts.
 
 int main() {
-    //code
+
     int t;
-    cin>>t;
-    while(t--){
-        int N;
-        cin>>N;
-        int data;
-        cin>>data;
-        struct Node *head = new Node(data);
-        struct Node *tail = head;
-        for (int i = 0; i < N-1; ++i)
-        {
-            cin>>data;
+    cin >> t;
+    cin.ignore(); // Ignore the newline character after reading t
+
+    while (t--) {
+        vector<int> arr;
+        string input;
+        getline(cin, input);
+        stringstream ss(input);
+        int number;
+        while (ss >> number) {
+            arr.push_back(number);
+        }
+
+        if (arr.empty()) {
+            cout << -1 << endl;
+            continue;
+        }
+
+        int data = arr[0];
+        struct Node* head = new Node(data);
+        struct Node* tail = head;
+        for (int i = 1; i < arr.size(); ++i) {
+            data = arr[i];
             tail->next = new Node(data);
             tail = tail->next;
         }
-        
+
         Solution ob;
         cout << ob.getMiddle(head) << endl;
     }
+
     return 0;
 }
 
