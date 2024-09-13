@@ -115,6 +115,7 @@ class Solution {
         if(node == NULL){
             return;
         }
+        
         mirror(node -> left);
         mirror(node -> right);
         
