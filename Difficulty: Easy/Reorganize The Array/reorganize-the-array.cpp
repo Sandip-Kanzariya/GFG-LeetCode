@@ -1,40 +1,52 @@
 //{ Driver Code Starts
+#include <bits/stdc++.h>
 #include <iostream>
-#include<bits/stdc++.h>
 using namespace std;
 
 
-int * Rearrange(int *arr,int n);
+// } Driver Code Ends
+class Solution {
+  public:
+    vector<int> rearrange(const vector<int>& arr) {
+        
+        int n = arr.size();
+        
+        vector <int> ans(n, -1);
+        
+        for(int i = 0;i < n;i++){
+            if(arr[i] >= 0){
+                int k = arr[i];
+                ans[k] = k;
+            }
+        }
+        return ans;
+    }
+};
+
+//{ Driver Code Starts.
 
 int main() {
-	//code
-	
-	int t;cin>>t;
-	while(t--)
-	{
-	    int n;cin>>n;
-	    int a[n];
-	    for(int i=0;i<n;i++)
-	        cin>>a[i];
-	    int *b = Rearrange(a,n);
-	    for(int i=0;i<n;i++)
-	        cout << b[i] <<" ";
-	    cout << endl;
-	    
-	}
-	
-	return 0;
+    int t;
+    cin >> t;
+    cin.ignore();
+
+    while (t--) {
+        string input;
+        getline(cin, input);
+        stringstream ss(input);
+        vector<int> arr;
+        int number;
+        while (ss >> number) {
+            arr.push_back(number);
+        }
+        Solution solution;
+        vector<int> ans = solution.rearrange(arr);
+
+        for (int i = 0; i < ans.size(); i++)
+            cout << ans[i] << " ";
+        cout << endl;
+    }
+
+    return 0;
 }
 // } Driver Code Ends
-
-
-int * Rearrange(int *arr,int n){
-    
-    while(n--)
-    {
-        while(arr[n] >= 0 && arr[n] != n){
-            swap(arr[n], arr[arr[n]]);
-        }
-    }
-    return arr;
-}
