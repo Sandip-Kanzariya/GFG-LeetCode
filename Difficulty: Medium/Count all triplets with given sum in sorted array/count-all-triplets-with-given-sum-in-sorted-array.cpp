@@ -6,13 +6,7 @@ using namespace std;
 // } Driver Code Ends
 class Solution {
   public:
-  
-    /* Two Pointers 
-        Time: O(n^2)
-        Space: O(1)
-    */
     int countTriplets(vector<int> &arr, int target) {
-        
         int n = arr.size();
         int ans = 0;
         
